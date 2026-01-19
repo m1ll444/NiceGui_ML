@@ -32,11 +32,14 @@ def dividir():
 #Estructura de la interfaz de usuario
 with ui.card().classes("w-60 m-auto p-4"):
     ui.label('Calculadora').classes ("font-sans") 
-    num1 = ui.input('Número 1').classes("w-full")
-    num2 = ui.input('Número 2').classes("w-full")   
-    bt_sumar = ui.button('Sumar').classes("w-full bg-blue-500 text-white").on_click(sumar)
-    bt_restar = ui.button('Restar').classes("w-full bg-green-500 text-white mt-2").on_click(restar)
-    bt_multiplicar = ui.button('Multiplicar').classes("w-full bg-yellow-500 text-white mt-2").on_click(multiplicar)
-    bt_dividir = ui.button('Dividir').classes("w-full bg-red-500 text-white mt-2").on_click(dividir)
+    with ui.column().classes("w-full items-center"):
+        num1 = ui.input('Número 1').classes("w-full")
+        num2 = ui.input('Número 2').classes("w-full")   
+    with ui.row().classes("w-full gap-2 mt-4"):    
+        bt_sumar = ui.button('Sumar').classes("bg-blue-500 text-white flex-1").on_click(sumar)
+        bt_restar = ui.button('Restar').classes("bg-green-500 text-white flex-1").on_click(restar)
+    with ui.row().classes("w-full gap-2 mt-2"):
+        bt_multiplicar = ui.button('Multiplicar').classes("bg-yellow-500 text-white flex-1").on_click(multiplicar)
+        bt_dividir = ui.button('Dividir').classes("bg-red-500 text-white flex-1").on_click(dividir)
     resultado = ui.label('Resultado: ').classes("font-sans mt-4")
 ui.run()
