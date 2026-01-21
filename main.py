@@ -39,4 +39,3 @@ with ui.card().classes("w-60 m-auto p-4"):
     bt_multiplicar = ui.button('Multiplicar').classes("w-full bg-yellow-500 text-white mt-2").on_click(multiplicar)
     bt_dividir = ui.button('Dividir').classes("w-full bg-red-500 text-white mt-2").on_click(dividir)
     resultado = ui.label('Resultado: ').classes("font-sans mt-4")
-ui.run()
